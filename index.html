@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="el">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="ACM AUEB Student Chapter - Connecting students with technology." />
+  <title>ACM AUEB Student Chapter</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&family=Lexend:wght@300;400;600;800;900&family=Inter:wght@300;400;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <nav id="navbar">
+    <div class="nav-inner">
+      <a href="#hero" class="nav-logo">
+        <img src="public/logo.png" alt="ACM AUEB Logo" onerror="this.style.display='none'" />
+        <span>ACM <span class="accent">AUEB</span></span>
+      </a>
+      <ul class="nav-links">
+        <li><a href="#about" data-i18n="nav_about">ΣΧΕΤΙΚΑ ΜΕ ΕΜΑΣ</a></li>
+        <li><a href="#events" data-i18n="nav_events">ΧΡΟΝΟΛΟΓΙΟ</a></li>
+        <li><a href="#actions" data-i18n="nav_actions">ΔΡΑΣΕΙΣ</a></li>
+        <li><a href="#contact" data-i18n="nav_contact">ΕΠΙΚΟΙΝΩΝΙΑ</a></li>
+        <li><a href="#" class="lang-switch font-mono lang-toggle-btn">EN</a></li>
+      </ul>
+      <a href="#join" class="nav-cta glow-button" data-i18n="nav_join">ΓΙΝΕ ΜΕΛΟΣ</a>
+      <button class="hamburger" id="hamburger" aria-label="Toggle mobile menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+    <ul class="mobile-menu" id="mobile-menu" aria-hidden="true">
+      <li><a href="#about" data-i18n="nav_about">ΣΧΕΤΙΚΑ ΜΕ ΕΜΑΣ</a></li>
+      <li><a href="#events" data-i18n="nav_events">ΧΡΟΝΟΛΟΓΙΟ</a></li>
+      <li><a href="#actions" data-i18n="nav_actions">ΔΡΑΣΕΙΣ</a></li>
+      <li><a href="#contact" data-i18n="nav_contact">ΕΠΙΚΟΙΝΩΝΙΑ</a></li>
+      <li><a href="#join" data-i18n="nav_join">ΓΙΝΕ ΜΕΛΟΣ</a></li>
+      <li><a href="#" class="lang-switch-mobile font-mono lang-toggle-btn">EN</a></li>
+    </ul>
+  </nav>
+
+  <section id="hero" class="hero-section">
+    <div class="hero-layout reveal">
+      <div class="hero-text-block">
+        <h1 class="glow-text" data-i18n="hero_title">ACM AUEB Student Chapter</h1>
+        <p><span class="hero-sub font-mono" data-i18n="hero_sub">Dream it. Code it. Shape it.</span></p>
+      </div>
+      <div class="hero-logo-block">
+        <img src="public/logo.png" alt="ACM AUEB Image">
+      </div>
+    </div>
+  </section>
+
+  <section id="about">
+    <div class="glass-card reveal relative-container">
+      <div class="orb orb-red"></div>
+      <div class="orb orb-white"></div>
+      <div class="card-content">
+        <h2 class="text-center" data-i18n="about_h2">ΣΧΕΤΙΚΑ ΜΕ ΕΜΑΣ</h2>
+        <div class="about-text">
+          <p data-i18n="about_p1">Είμαστε το επίσημο φοιτητικό Chapter του Association for Computing Machinery στο Οικονομικό Πανεπιστήμιο Αθηνών!</p>
+          <p data-i18n="about_p2">Σκοπός μας είναι η δημιουργία ενός δυναμικού περιβάλλοντος ανταλλαγής γνώσης και συνεργασίας, μέσα από τεχνολογικές δράσεις, βιωματικά εργαστήρια και ουσιαστική δικτύωση, με στόχο την ανάδειξη της καινοτομίας.</p>
+          <p data-i18n="about_p3">Αν είσαι φοιτητ@ στο ΟΠΑ και αγαπάς την Πληροφορική και την Τεχνολογία, γίνε μέλος της νέας, ενεργής κοινότητας και ακολούθησέ μας στο ταξίδι καινοτομίας και γνώσης.</p>
+          <p class="pt-2"><span data-i18n="about_p4">Για περισσότερες πληροφορίες σχετικά με την ACM πάτα </span><a href="https://www.acm.org/" target="_blank" class="accent-link" data-i18n="about_link">εδώ</a>.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="events">
+    <div class="section-inner reveal">
+      <p class="section-label font-mono text-center" data-i18n="events_label">History & Commits</p>
+      <h2 class="text-center" data-i18n="events_title">What's been <span class="accent glow-text">happening.</span></h2>
+      <div class="git-log-container">
+        <div class="timeline-spine"></div>
+        <div class="timeline-events" id="timeline-events"></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="actions">
+    <div class="section-inner reveal">
+      <div class="text-center mb-5">
+        <p class="section-label font-mono" data-i18n="actions_label">ΟΙ ΕΠΕΡΧΟΜΕΝΕΣ ΔΡΑΣΕΙΣ ΤΗΣ ΟΜΑΔΑΣ ΜΑΣ</p>
+        <h2 data-i18n="actions_title">ΟΙ <span class="accent glow-text">ΔΡΑΣΕΙΣ</span> ΜΑΣ</h2>
+      </div>
+
+      <div class="stacked-cards-container">
+        <button class="nav-btn prev-btn" aria-label="Previous card">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"></polyline></svg>
+        </button>
+
+        <div class="cards-wrapper">
+          <div class="stacked-card glass-card group card-active" data-index="0">
+            <div class="card-glow glow-white"></div>
+            <div class="icon-box">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 18 22 12 16 6"></polyline><polyline points="8 6 2 12 8 18"></polyline></svg>
+            </div>
+            <h3>Workshops</h3>
+            <p class="text-dim" data-i18n="card_soon">Coming soon...</p>
+            <div class="card-link font-mono" data-i18n="card_more">ΜΑΘΕ ΠΕΡΙΣΣΟΤΕΡΑ<div class="link-line"></div></div>
+          </div>
+          <div class="stacked-card glass-card group card-right" data-index="1">
+            <div class="card-glow glow-dark"></div>
+            <div class="icon-box">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 18h8"></path><path d="M3 22h18"></path><path d="M14 22a7 7 0 1 0 0-14h-1"></path><path d="M9 14h2"></path><path d="M9 12a2 2 0 0 1-2-2V6h6v4a2 2 0 0 1-2 2Z"></path><path d="M12 6V3a1 1 0 0 0-1-1H9a1 1 0 0 0-1 1v3"></path></svg>
+            </div>
+            <h3>Coding Sessions</h3>
+            <p class="text-dim" data-i18n="card_soon">Coming soon...</p>
+            <div class="card-link font-mono" data-i18n="card_more">ΜΑΘΕ ΠΕΡΙΣΣΟΤΕΡΑ<div class="link-line"></div></div>
+          </div>
+          <div class="stacked-card glass-card group card-left" data-index="2">
+            <div class="card-glow glow-white"></div>
+            <div class="icon-box">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M22 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>
+            </div>
+            <h3>Networking</h3>
+            <p class="text-dim" data-i18n="card_soon">Coming soon...</p>
+            <div class="card-link font-mono" data-i18n="card_more">ΜΑΘΕ ΠΕΡΙΣΣΟΤΕΡΑ<div class="link-line"></div></div>
+          </div>
+        </div>
+
+        <button class="nav-btn next-btn" aria-label="Next card">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg>
+        </button>
+      </div>
+
+      <div class="card-indicators">
+        <button class="indicator active" data-index="0"></button>
+        <button class="indicator" data-index="1"></button>
+        <button class="indicator" data-index="2"></button>
+      </div>
+    </div>
+  </section>
+
+  <section id="join" class="join-section reveal">
+    <div class="join-content">
+      <h2 data-i18n="join_h2">ΓΙΝΕ ΜΕΛΟΣ</h2>
+      <p data-i18n="join_p">
+        Θες να γίνεις μέλος του ACM AUEB Student Chapter και να συμμετέχεις ενεργά στις δράσεις μας; Κάνε την αίτησή σου εδώ!
+      </p>
+    </div>
+    <a href="https://forms.gle/1RVQfXFzaRDGQJUe7" target="_blank" class="btn-mega glow-button" data-i18n="join_btn">
+      ΑΙΤΗΣΗ ΜΕΛΟΥΣ <span class="arrow">↗</span>
+    </a>
+  </section>
+
+  <footer id="contact" class="glass-footer">
+    <div class="footer-inner">
+      <div class="footer-brand">
+
+        <section id="newsletter" class="newsletter-section">
+          <div>
+            <h3 data-i18n="nl_h3">Εγγραφή στο Newsletter</h3>
+            
+            <iframe name="hidden_iframe" id="hidden_iframe" style="display:none;" onload="if(submitted) { document.getElementById('success-msg').style.display='block'; document.getElementById('nl-form').style.display='none'; }"></iframe>
+
+            <form id="nl-form" action="https://4b8c83bb.sibforms.com/serve/MUIFAATotrRaJCFavqS6XqP3n-_6Sk642d76dnk7qIrMKU01aysIPyx5xMXU5SemENSPT0MvqwWGqlfEmxzEhp40S19kbBiGEvGRHnF27vDCREMDCGFnAOqU4UVEuqBLBK7QqHEARd8QT1AgMwaLrAZuIZIporkLuOsPLhqZloX9iMQTkvLuzR1_5a8N8hqQ4O98H6uj3n5oezmzuQ==" method="POST" target="hidden_iframe" onsubmit="submitted=true;">
+              <div class="newsletter-form">
+                <input type="email" name="EMAIL" placeholder="Email Address" data-i18n="nl_placeholder" pattern="[a-zA-Z0-9._%+\-]+@[a-zA-Z0-9.\-]+\.[a-zA-Z]{2,}$" required>
+                <button type="submit" class="glow-button" data-i18n="nl_btn">ΕΓΓΡΑΦΗ</button>
+              </div>
+
+              <p class="agree-terms" id="nl-terms">
+                <input type="checkbox" name="subscribe" required> 
+                <span data-i18n="nl_terms_text">Αποδέχομαι την </span><a href="policy.html" target="_blank" style="text-decoration: underline; color: var(--text-primary); font-weight: bold;" data-i18n="nl_terms_link">Πολιτική Απορρήτου</a>
+              </p>
+            </form>
+
+            <p id="success-msg" style="display:none; color: #4598ec; font-weight: bold; margin-top: 15px;" data-i18n="nl_success">
+              Σε ευχαριστούμε για την εγγραφή σου! Παρακαλώ έλεγξε το email σου για να επιβεβαιώσεις την εγγραφή σου.
+            </p>
+          </div>
+        </section>
+        <script>var submitted = false;</script>
+
+      </div>
+
+      <div class="footer-social font-mono">
+        <span class="text-white font-bold">CONNECT</span>
+        <a href="https://www.instagram.com/acm.aueb" target="_blank" class="social-link">
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
+          Instagram
+        </a>
+        <a href="https://www.linkedin.com/company/acm-aueb-student-chapter/" target="_blank" class="social-link">
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg>
+          LinkedIn
+        </a>
+        <a href="https://discord.gg/B966SG9Pnj" target="_blank" class="social-link">
+          <svg class="discord-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M20.317 4.37a19.791 19.791 0 0 0-4.885-1.515.074.074 0 0 0-.079.037c-.21.375-.444.864-.608 1.25a18.27 18.27 0 0 0-5.487 0 12.64 12.64 0 0 0-.617-1.25.077.077 0 0 0-.079-.037A19.736 19.736 0 0 0 3.677 4.37a.07.07 0 0 0-.032.027C.533 9.046-.32 13.58.099 18.057a.082.082 0 0 0 .031.057 19.9 19.9 0 0 0 5.993 3.03.078.078 0 0 0 .084-.028c.462-.63.874-1.295 1.226-1.994a.076.076 0 0 0-.041-.106 13.107 13.107 0 0 1-1.872-.892.077.077 0 0 1-.008-.128 10.2 10.2 0 0 0 .372-.292.074.074 0 0 1 .077-.01c3.928 1.793 8.18 1.793 12.062 0a.074.074 0 0 1 .078.01c.12.098.246.198.373.292a.077.077 0 0 1-.006.127 12.299 12.299 0 0 1-1.873.892.077.077 0 0 0-.041.107c.36.698.772 1.362 1.225 1.993a.076.076 0 0 0 .084.028 19.839 19.839 0 0 0 6.002-3.03.077.077 0 0 0 .032-.054c.5-5.177-.838-9.674-3.549-13.66a.061.061 0 0 0-.031-.028zM8.02 15.33c-1.183 0-2.157-1.085-2.157-2.419 0-1.333.956-2.419 2.157-2.419 1.21 0 2.176 1.096 2.157 2.42 0 1.333-.956 2.418-2.157 2.418zm7.975 0c-1.183 0-2.157-1.085-2.157-2.419 0-1.333.955-2.419 2.157-2.419 1.21 0 2.176 1.096 2.157 2.42 0 1.333-.946 2.418-2.157 2.418z" />
+          </svg>
+          Discord
+        </a>
+        <a href="mailto:acmchapter@aueb.gr" class="social-link">
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+          Email
+        </a>
+      </div>
+    </div>
+    <div class="footer-copyright font-mono">
+      © 2026 ACM AUEB STUDENT CHAPTER
+    </div>
+  </footer>
+
+  <script src="script.js" defer></script>
+</body>
+</html>
