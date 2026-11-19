@@ -19,7 +19,7 @@ html { scroll-behavior: smooth; }
 
 body {
   background-color: var(--color-space-black);
-  background-image: linear-gradient(rgba(10, 2, 2, 0.4), rgba(5, 1, 1, 0.4)), url('public/background.png'); 
+  background-image: linear-gradient(rgba(10, 2, 2, 0.4), rgba(5, 1, 1, 0.4)), url('../public/images/background.png'); 
   background-size: 100% auto; 
   background-position: top center;
   color: var(--text-primary);
